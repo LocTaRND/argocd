@@ -15,6 +15,9 @@
 - Install Argo rollouts plugin and enable UI (https://argo-rollouts.readthedocs.io/en/stable/installation/)
     helm upgrade --install argo-rollout argo/argo-rollouts --set dashboard.enabled=true -n rollouts
 
+- Deploy
+    kubectl apply -f https://raw.githubusercontent.com/LocTaRND/argocd/main/canary/canary-app-localcluster.yaml
+
 - Monitor:
     kubectl argo rollouts get rollout rollouts-demo --watch -n canary
 
@@ -40,3 +43,9 @@
 
 
 https://medium0.com/@imacq/argo-rollouts-quick-guide-canary-deployments-3973db254b37
+
+
+## BlueGreen
+
+- Deploy
+    kubectl apply -f https://raw.githubusercontent.com/LocTaRND/argocd/main/bluegreen/bluegreen.yaml
