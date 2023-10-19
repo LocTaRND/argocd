@@ -1,5 +1,13 @@
 ## canary
 
+- Install Argo Rollouts
+    - kubectl create namespace argo-rollouts
+    - kubectl apply -n argo-rollouts -f https://github.com/argoproj/argo-rollouts/releases/latest/download/install.yaml
+
+    - Install Argo rollouts plugin and enable UI (https://argo-rollouts.readthedocs.io/en/stable/installation/)
+        kubectl create ns rollouts
+        helm upgrade --install argo-rollout argo/argo-rollouts --set dashboard.enabled=true -n rollouts
+
 - Create namespace
     kubectk create ns argocd
     kubectl create ns rollouts
@@ -12,8 +20,7 @@
     helm repo add argo https://argoproj.github.io/argo-helm
     helm repo update
     helm upgrade --install argocd argo/argo-cd --set server.service.type=LoadBalancer -n argocd
-- Install Argo rollouts plugin and enable UI (https://argo-rollouts.readthedocs.io/en/stable/installation/)
-    helm upgrade --install argo-rollout argo/argo-rollouts --set dashboard.enabled=true -n rollouts
+
 
 - Deploy
     kubectl apply -f https://raw.githubusercontent.com/LocTaRND/argocd/main/canary/canary-app-localcluster.yaml
@@ -56,3 +63,5 @@ https://medium0.com/@imacq/argo-rollouts-quick-guide-canary-deployments-3973db25
 
 
     https://devopsvn.tech/kubernetes-practice/automating-bluegreen-deployment-with-argo-rollouts
+
+
