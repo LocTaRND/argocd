@@ -49,3 +49,10 @@ https://medium0.com/@imacq/argo-rollouts-quick-guide-canary-deployments-3973db25
 
 - Deploy
     kubectl apply -f https://raw.githubusercontent.com/LocTaRND/argocd/main/bluegreen/bluegreen.yaml
+
+    argocd app sync argocd/bluegreen
+
+    kubectl argo rollouts get rollout bluegreen-demo --watch -n bluegreen
+
+
+    https://devopsvn.tech/kubernetes-practice/automating-bluegreen-deployment-with-argo-rollouts
