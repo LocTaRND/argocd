@@ -38,6 +38,7 @@
         chmod +x ./kubectl-argo-rollouts-linux-amd64
         sudo mv ./kubectl-argo-rollouts-linux-amd64 /usr/local/bin/kubectl-argo-rollouts
         kubectl argo rollouts version
+        
     - Argocd login
         argocd login 4.236.203.118
             user:
